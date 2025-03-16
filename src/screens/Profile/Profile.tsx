@@ -1,12 +1,10 @@
-import React from "react";
 import { Avatar } from "../../components/ui/avatar";
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { ScrollArea } from "../../components/ui/scroll-area";
-import { Tabs, TabsList, TabsTrigger } from "../../components/ui/tabs";
-import { Container } from "../../components/ui/container";
-import { Settings, MapPin, Calendar, Heart, MessageCircle } from "lucide-react";
+import { Heart, MessageCircle, MapPin, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Container } from "../../components/ui/container";
 
 export const Profile = (): JSX.Element => {
   const userStats = {
@@ -59,7 +57,7 @@ export const Profile = (): JSX.Element => {
             <h1 className="text-xl font-semibold">Profile</h1>
             <Link to="/settings">
               <Button variant="ghost" size="icon">
-                <Settings className="h-5 w-5" />
+                <Menu className="h-5 w-5" />
               </Button>
             </Link>
           </div>
@@ -118,11 +116,11 @@ export const Profile = (): JSX.Element => {
         </div>
 
         {/* Content Tabs */}
-        <Tabs defaultValue="posts" className="w-full">
-          <TabsList className="w-full flex border-b">
-            <TabsTrigger value="posts" className="flex-1 py-3">Posts</TabsTrigger>
-            <TabsTrigger value="activities" className="flex-1 py-3">Activities</TabsTrigger>
-          </TabsList>
+        <div className="w-full">
+          <div className="w-full flex border-b">
+            <div className="flex-1 py-3">Posts</div>
+            <div className="flex-1 py-3">Activities</div>
+          </div>
 
           <ScrollArea className="h-[calc(100vh-26rem)]">
             <div className="p-4 space-y-4">
@@ -153,7 +151,7 @@ export const Profile = (): JSX.Element => {
               ))}
             </div>
           </ScrollArea>
-        </Tabs>
+        </div>
       </Container>
     </div>
   );
