@@ -11,4 +11,18 @@ export default defineConfig({
       plugins: [tailwind()],
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        configure: (proxy) => {
+          proxy.on('proxyReq', (proxyReq) => {
+            proxyReq.path = proxyReq.path.replace(/^\/api/, '');
+          });
+        }
+      }
+    }
+  },
+  assetsInclude: ["**/*.html"],
 });
