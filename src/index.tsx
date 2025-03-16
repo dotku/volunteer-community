@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Home } from './screens/Home/Home';
-import { Search } from './screens/Search/Search';
-import { Match } from './screens/Match/Match';
-import { MapView } from './screens/MapView/MapView';
-import { Chat } from './screens/Chat/Chat';
-import { Profile } from './screens/Profile/Profile';
-import { VolunteerActivities } from './screens/VolunteerActivities/VolunteerActivities';
-import { Redeem } from './screens/Redeem/Redeem';
-import { Button } from './components/ui/button';
-import { Avatar } from './components/ui/avatar';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Home } from "./screens/Home/Home";
+import { Search } from "./screens/Search/Search";
+import { Match } from "./screens/Match/Match";
+import { MapView } from "./screens/MapView/MapView";
+import { Chat } from "./screens/Chat/Chat";
+import { Profile } from "./screens/Profile/Profile";
+import { VolunteerActivities } from "./screens/VolunteerActivities/VolunteerActivities";
+import { Redeem } from "./screens/Redeem/Redeem";
+import { Button } from "./components/ui/button";
+import { Avatar } from "./components/ui/avatar";
 import {
   Home as HomeIcon,
   Search as SearchIcon,
@@ -20,8 +20,9 @@ import {
   Calendar as CalendarIcon,
   Gift as GiftIcon,
   Menu as MenuIcon,
-} from 'lucide-react';
+} from "lucide-react";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./index.css";
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
 
   return (
     <Router>
+      <Analytics />
       <div className="min-h-screen bg-gray-50">
         {/* Desktop Sidebar */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
@@ -134,18 +136,21 @@ const App = () => {
                   to={item.to}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button variant="ghost" className="w-full justify-start gap-3">
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start gap-3"
+                  >
                     <item.icon className="h-5 w-5" />
                     {item.name}
                   </Button>
                 </Link>
               ))}
               <div className="border-t mt-4 pt-4">
-                <Link
-                  to="/profile"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Button variant="ghost" className="w-full justify-start gap-3">
+                <Link to="/profile" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start gap-3"
+                  >
                     <Avatar className="h-8 w-8 ring-2 ring-white relative z-10">
                       <img
                         src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
@@ -165,7 +170,11 @@ const App = () => {
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t md:hidden z-30">
           <nav className="flex justify-around p-2">
             {navigation.slice(0, 5).map((item) => (
-              <Link key={item.name} to={item.to} className="flex flex-col items-center p-2">
+              <Link
+                key={item.name}
+                to={item.to}
+                className="flex flex-col items-center p-2"
+              >
                 <item.icon className="h-6 w-6" />
                 <span className="text-xs mt-1">{item.name}</span>
               </Link>
@@ -194,7 +203,7 @@ const App = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
