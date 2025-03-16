@@ -3,7 +3,17 @@ import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { Badge } from "../../components/ui/badge";
-import { BellIcon, HomeIcon, SearchIcon, Heart, MessageCircle, Users, MapPin, Gift, Menu } from "lucide-react";
+import {
+  BellIcon,
+  HomeIcon,
+  SearchIcon,
+  Heart,
+  MessageCircle,
+  Users,
+  MapPin,
+  Gift,
+  Menu,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Container } from "../../components/ui/container";
 
@@ -13,32 +23,35 @@ export const Home = (): JSX.Element => {
       id: 1,
       username: "starryskies23",
       timeAgo: "2h",
-      content: "Looking for volunteers to help clean up Central Park this weekend! 🌿",
+      content:
+        "Looking for volunteers to help clean up Central Park this weekend! 🌿",
       likes: 124,
       comments: 45,
-      avatar: "profile-image.png",
-      image: "image.png",
+      avatar: "/profile-image.png",
+      image: "/image.png",
     },
     {
       id: 2,
       username: "nebulanomad",
       timeAgo: "4h",
-      content: "Just finished my first day volunteering at the local animal shelter! 🐾",
+      content:
+        "Just finished my first day volunteering at the local animal shelter! 🐾",
       likes: 89,
       comments: 23,
-      avatar: "avatar-1.png",
-      image: "image-2.png",
+      avatar: "/avatar-1.png",
+      image: "/image-2.png",
     },
     {
       id: 3,
       username: "emberecho",
       timeAgo: "6h",
-      content: "Incredible turnout at today's beach cleanup! Thank you to all 50+ volunteers who showed up! 🌊",
+      content:
+        "Incredible turnout at today's beach cleanup! Thank you to all 50+ volunteers who showed up! 🌊",
       likes: 156,
       comments: 34,
-      avatar: "avatar-2.png",
-      image: "image-3.png",
-    }
+      avatar: "/avatar-2.png",
+      image: "/image-3.png",
+    },
   ];
 
   return (
@@ -92,7 +105,11 @@ export const Home = (): JSX.Element => {
           <Link to="/profile">
             <Button variant="ghost" className="w-full justify-start gap-3">
               <Avatar className="w-8 h-8">
-                <img src="profile-image.png" alt="Profile" className="rounded-full" />
+                <img
+                  src="profile-image.png"
+                  alt="Profile"
+                  className="rounded-full"
+                />
               </Avatar>
               <span>Sarah Parker</span>
             </Button>
@@ -104,9 +121,21 @@ export const Home = (): JSX.Element => {
         {/* Status Bar - Mobile only */}
         <div className="h-11 relative md:hidden">
           <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-            <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="battery.png" />
-            <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="wifi.svg" />
-            <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="mobile-signal.svg" />
+            <img
+              className="absolute w-6 h-[11px] top-0 right-0"
+              alt="Battery"
+              src="battery.png"
+            />
+            <img
+              className="absolute w-[15px] h-[11px] top-0 right-8"
+              alt="Wifi"
+              src="wifi.svg"
+            />
+            <img
+              className="absolute w-[17px] h-[11px] top-0 right-14"
+              alt="Signal"
+              src="mobile-signal.svg"
+            />
           </div>
           <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(time.svg)] bg-[100%_100%]" />
         </div>
@@ -124,7 +153,11 @@ export const Home = (): JSX.Element => {
               <div className="flex items-center gap-2">
                 <Link to="/profile" className="lg:hidden">
                   <Avatar className="h-8 w-8">
-                    <img src="profile-image.png" alt="Profile" className="rounded-full" />
+                    <img
+                      src="profile-image.png"
+                      alt="Profile"
+                      className="rounded-full"
+                    />
                   </Avatar>
                 </Link>
               </div>
@@ -138,25 +171,40 @@ export const Home = (): JSX.Element => {
             <ScrollArea className="h-[calc(100vh-11rem)]">
               <div className="pb-20 space-y-4 p-4">
                 {posts.map((post) => (
-                  <Card key={post.id} className="border rounded-lg overflow-hidden">
+                  <Card
+                    key={post.id}
+                    className="border rounded-lg overflow-hidden"
+                  >
                     <div className="p-4">
                       <div className="flex items-center gap-3">
                         <Link to={`/profile/${post.username}`}>
                           <Avatar className="w-10 h-10">
-                            <img src={post.avatar} alt={post.username} className="rounded-full" />
+                            <img
+                              src={post.avatar}
+                              alt={post.username}
+                              className="rounded-full"
+                            />
                           </Avatar>
                         </Link>
                         <div>
                           <Link to={`/profile/${post.username}`}>
-                            <span className="font-medium hover:underline">{post.username}</span>
+                            <span className="font-medium hover:underline">
+                              {post.username}
+                            </span>
                           </Link>
-                          <p className="text-sm text-gray-500">{post.timeAgo}</p>
+                          <p className="text-sm text-gray-500">
+                            {post.timeAgo}
+                          </p>
                         </div>
                       </div>
                       <p className="mt-3 text-[15px]">{post.content}</p>
                       {post.image && (
                         <div className="mt-3 rounded-xl overflow-hidden">
-                          <img src={post.image} alt="Post content" className="w-full h-auto" />
+                          <img
+                            src={post.image}
+                            alt="Post content"
+                            className="w-full h-auto"
+                          />
                         </div>
                       )}
                       <div className="flex items-center gap-6 mt-4">
@@ -216,7 +264,11 @@ export const Home = (): JSX.Element => {
             <Link to="/profile">
               <Button variant="ghost" size="icon" className="p-0">
                 <Avatar className="w-6 h-6">
-                  <img src="profile-image.png" alt="Profile" className="rounded-full" />
+                  <img
+                    src="profile-image.png"
+                    alt="Profile"
+                    className="rounded-full"
+                  />
                 </Avatar>
               </Button>
             </Link>
