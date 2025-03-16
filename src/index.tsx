@@ -7,104 +7,188 @@ import { Match } from './screens/Match/Match';
 import { MapView } from './screens/MapView/MapView';
 import { Chat } from './screens/Chat/Chat';
 import { Profile } from './screens/Profile/Profile';
-import { Redeem } from './screens/Redeem/Redeem';
 import { VolunteerActivities } from './screens/VolunteerActivities/VolunteerActivities';
+import { Redeem } from './screens/Redeem/Redeem';
 import { Button } from './components/ui/button';
 import { Avatar } from './components/ui/avatar';
-import { HomeIcon, SearchIcon, Users, MapPin, Gift, MessageSquare, Calendar } from 'lucide-react';
-import './index.css';
+import {
+  Home as HomeIcon,
+  Search as SearchIcon,
+  Users as UsersIcon,
+  Map as MapIcon,
+  MessageSquare as ChatIcon,
+  Calendar as CalendarIcon,
+  Gift as GiftIcon,
+  Menu as MenuIcon,
+} from 'lucide-react';
+import { useState } from "react";
+import "./index.css";
 
 const App = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navigation = [
+    { name: "Home", to: "/", icon: HomeIcon },
+    { name: "Search", to: "/search", icon: SearchIcon },
+    { name: "Matches", to: "/match", icon: UsersIcon },
+    { name: "Map View", to: "/map", icon: MapIcon },
+    { name: "Chat", to: "/chat", icon: ChatIcon },
+    { name: "Activities", to: "/activity", icon: CalendarIcon },
+    { name: "Redeem", to: "/redeem", icon: GiftIcon },
+  ];
+
   return (
     <Router>
-      <div className="bg-white min-h-screen flex">
+      <div className="min-h-screen bg-gray-50">
         {/* Desktop Sidebar */}
-        <aside className="hidden md:flex w-64 flex-col border-r h-screen sticky top-0">
-          <div className="p-6">
-            <h1 className="text-2xl font-bold">Volunteer</h1>
-          </div>
-          <nav className="flex-1 px-4">
-            <div className="space-y-2">
-              <Link to="/">
+        <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
+            <div className="flex h-16 shrink-0 items-center">
+              <img
+                className="h-8 w-auto"
+                src="https://ui-avatars.com/api/?name=Volunteer+Community&background=3B82F6&color=fff"
+                alt="Volunteer Community"
+              />
+            </div>
+            <nav className="flex flex-1 flex-col">
+              <ul role="list" className="flex flex-1 flex-col gap-y-7">
+                <li>
+                  <ul role="list" className="-mx-2 space-y-1">
+                    {navigation.map((item) => (
+                      <li key={item.name}>
+                        <Link to={item.to}>
+                          <Button
+                            variant="ghost"
+                            className="w-full justify-start gap-3"
+                          >
+                            <item.icon className="h-5 w-5" />
+                            {item.name}
+                          </Button>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <div className="border-t">
+              <Link to="/profile">
                 <Button variant="ghost" className="w-full justify-start gap-3">
-                  <HomeIcon className="w-5 h-5" />
-                  Home
-                </Button>
-              </Link>
-              <Link to="/search">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <SearchIcon className="w-5 h-5" />
-                  Search
-                </Button>
-              </Link>
-              <Link to="/match">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <Users className="w-5 h-5" />
-                  Matches
-                </Button>
-              </Link>
-              <Link to="/map">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <MapPin className="w-5 h-5" />
-                  Map View
-                </Button>
-              </Link>
-              <Link to="/chat">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <MessageSquare className="w-5 h-5" />
-                  Chat
-                </Button>
-              </Link>
-              <Link to="/activity">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <Calendar className="w-5 h-5" />
-                  Activities
-                </Button>
-              </Link>
-              <Link to="/redeem">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <Gift className="w-5 h-5" />
-                  Redeem
+                  <Avatar className="h-8 w-8 ring-2 ring-white relative z-10">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
+                      alt="Profile"
+                      className="rounded-full"
+                    />
+                  </Avatar>
+                  <span className="relative z-0">Sarah Parker</span>
                 </Button>
               </Link>
             </div>
-          </nav>
-          <div className="p-4 border-t">
-            <Link to="/profile">
-              <Button variant="ghost" className="w-full justify-start gap-3">
-                <Avatar className="w-8 h-8">
-                  <img src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random" alt="Profile" className="rounded-full" />
-                </Avatar>
-                <span>Sarah Parker</span>
-              </Button>
-            </Link>
           </div>
-        </aside>
+        </div>
+
+        {/* Mobile Header */}
+        <div className="sticky top-0 z-30 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 md:hidden">
+          <button
+            type="button"
+            className="-m-2.5 p-2.5 text-gray-700"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className="sr-only">Open sidebar</span>
+            <MenuIcon className="h-6 w-6" aria-hidden="true" />
+          </button>
+          <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+            <div className="flex flex-1 items-center gap-x-4 lg:gap-x-6">
+              <img
+                className="h-8 w-auto"
+                src="https://ui-avatars.com/api/?name=Volunteer+Community&background=3B82F6&color=fff"
+                alt="Volunteer Community"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 z-50 bg-white md:hidden">
+            <div className="flex h-16 items-center justify-between px-4 border-b">
+              <img
+                className="h-8 w-auto"
+                src="https://ui-avatars.com/api/?name=Volunteer+Community&background=3B82F6&color=fff"
+                alt="Volunteer Community"
+              />
+              <button
+                type="button"
+                className="-m-2.5 p-2.5 text-gray-700"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <nav className="flex flex-col p-4">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button variant="ghost" className="w-full justify-start gap-3">
+                    <item.icon className="h-5 w-5" />
+                    {item.name}
+                  </Button>
+                </Link>
+              ))}
+              <div className="border-t mt-4 pt-4">
+                <Link
+                  to="/profile"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button variant="ghost" className="w-full justify-start gap-3">
+                    <Avatar className="h-8 w-8 ring-2 ring-white relative z-10">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
+                        alt="Profile"
+                        className="rounded-full"
+                      />
+                    </Avatar>
+                    <span className="relative z-0">Sarah Parker</span>
+                  </Button>
+                </Link>
+              </div>
+            </nav>
+          </div>
+        )}
+
+        {/* Mobile Bottom Navigation */}
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t md:hidden z-30">
+          <nav className="flex justify-around p-2">
+            {navigation.slice(0, 5).map((item) => (
+              <Link key={item.name} to={item.to} className="flex flex-col items-center p-2">
+                <item.icon className="h-6 w-6" />
+                <span className="text-xs mt-1">{item.name}</span>
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         {/* Main Content */}
-        <main className="flex-1">
-          {/* Status Bar - Mobile only */}
-          <div className="h-11 relative md:hidden">
-            <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-              <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="/battery.png" />
-              <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="/wifi.svg" />
-              <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="/mobile-signal.svg" />
-            </div>
-            <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(/time.svg)] bg-[100%_100%]" />
-          </div>
-
-          {/* Routes */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/match" element={<Match />} />
-            <Route path="/map" element={<MapView />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/redeem" element={<Redeem />} />
-            <Route path="/activity" element={<VolunteerActivities />} />
-          </Routes>
-        </main>
+        <div className="md:pl-64">
+          <main className="pb-16 md:pb-0 relative z-0">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/match" element={<Match />} />
+              <Route path="/map" element={<MapView />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/chat/:chatId" element={<Chat />} />
+              <Route path="/activity" element={<VolunteerActivities />} />
+              <Route path="/redeem" element={<Redeem />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </main>
+        </div>
       </div>
     </Router>
   );

@@ -56,39 +56,39 @@ export const Redeem = () => {
 
   return (
     <Container>
-      <div className="p-4">
-        <div className="flex items-center justify-between mb-6">
+      <div className="py-4 px-4 md:px-0 md:py-6 mb-16 md:mb-0">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold">Redeem Points</h1>
             <p className="text-gray-500">Turn your volunteer points into rewards</p>
           </div>
-          <Card className="p-4 flex items-center gap-3">
-            <Award className="w-5 h-5 text-yellow-500" />
+          <Card className="p-4 flex items-center gap-3 bg-white shadow-sm">
+            <Award className="w-6 h-6 text-yellow-500" />
             <div>
               <p className="text-sm text-gray-500">Available Points</p>
-              <p className="font-bold text-lg">{userPoints}</p>
+              <p className="font-bold text-xl">{userPoints}</p>
             </div>
           </Card>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {rewards.map((reward) => (
-            <Card key={reward.id} className={`p-4 ${!reward.available && 'opacity-60'}`}>
+            <Card key={reward.id} className={`p-4 bg-white shadow-sm ${!reward.available && 'opacity-60'}`}>
               <div className="flex items-start gap-4">
-                <Avatar className="h-12 w-12">
+                <Avatar className="h-12 w-12 shrink-0">
                   <img src={reward.providerAvatar} alt={reward.provider} className="rounded-full" />
                 </Avatar>
-                <div className="flex-1">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="font-medium">{reward.title}</h3>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <h3 className="font-medium truncate">{reward.title}</h3>
                       <p className="text-sm text-gray-500">{reward.provider}</p>
                     </div>
-                    <p className="font-bold text-lg">{reward.value}</p>
+                    <p className="font-bold text-lg shrink-0">{reward.value}</p>
                   </div>
-                  <p className="text-sm text-gray-600 mt-2">{reward.description}</p>
+                  <p className="text-sm text-gray-600 mt-2 line-clamp-2">{reward.description}</p>
                   
-                  <div className="flex items-center gap-4 mt-3">
+                  <div className="flex flex-wrap items-center gap-3 mt-3">
                     <div className="flex items-center gap-1 text-sm text-gray-500">
                       <Gift className="w-4 h-4" />
                       <span>{reward.points} points</span>
@@ -106,7 +106,7 @@ export const Redeem = () => {
                     </div>
                   ) : (
                     <Button 
-                      className="w-full mt-4" 
+                      className="w-full mt-4 py-2" 
                       variant={userPoints >= reward.points ? "default" : "outline"}
                       disabled={userPoints < reward.points}
                     >
