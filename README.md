@@ -1,4 +1,4 @@
-# Anima Project
+# Volunteer Community
 
 ![Volunteer Community Home Page](docs/image.png)
 
