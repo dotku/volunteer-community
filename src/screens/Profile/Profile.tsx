@@ -22,7 +22,7 @@ export const Profile = (): JSX.Element => {
       content: "Just completed another successful beach cleanup! 🌊 Thanks to everyone who joined!",
       likes: 124,
       comments: 45,
-      image: "public/image.png",
+      image: "image.png",
     },
     {
       id: 2,
@@ -30,14 +30,14 @@ export const Profile = (): JSX.Element => {
       content: "Volunteering at the local animal shelter today! 🐾",
       likes: 89,
       comments: 23,
-      image: "public/image-2.png",
+      image: "image-2.png",
     },
   ];
 
   const badges = [
-    { id: 1, name: "Environmental Hero", image: "public/avatar-1.png" },
-    { id: 2, name: "Animal Advocate", image: "public/avatar-2.png" },
-    { id: 3, name: "Community Leader", image: "public/avatar-3.png" },
+    { id: 1, name: "Environmental Hero", image: "avatar-1.png" },
+    { id: 2, name: "Animal Advocate", image: "avatar-2.png" },
+    { id: 3, name: "Community Leader", image: "avatar-3.png" },
   ];
 
   return (
@@ -45,9 +45,9 @@ export const Profile = (): JSX.Element => {
       {/* Status Bar - Mobile only */}
       <div className="h-11 relative md:hidden">
         <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-          <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="public/battery.png" />
-          <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="public/wifi.svg" />
-          <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="public/mobile-signal.svg" />
+          <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="battery.png" />
+          <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="wifi.svg" />
+          <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="mobile-signal.svg" />
         </div>
         <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(public/time.svg)] bg-[100%_100%]" />
       </div>
@@ -71,7 +71,7 @@ export const Profile = (): JSX.Element => {
         <div className="px-4 py-6">
           <div className="flex items-start gap-4">
             <Avatar className="w-20 h-20">
-              <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+              <img src="profile-image.png" alt="Profile" className="rounded-full" />
             </Avatar>
             <div className="flex-1">
               <h2 className="text-xl font-semibold">Sarah Parker</h2>

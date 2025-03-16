@@ -13,7 +13,7 @@ export const List = (): JSX.Element => {
       name: "Green Earth Initiative",
       lastMessage: "Great! See you on Saturday at 9 AM.",
       time: "2m",
-      avatar: "public/avatar-1.png",
+      avatar: "avatar-1.png",
       unread: 2,
     },
     {
@@ -21,7 +21,7 @@ export const List = (): JSX.Element => {
       name: "Animal Shelter",
       lastMessage: "Thank you for your help today!",
       time: "1h",
-      avatar: "public/avatar-2.png",
+      avatar: "avatar-2.png",
     },
     // Add more chats as needed
   ];
@@ -31,11 +31,11 @@ export const List = (): JSX.Element => {
       {/* Status Bar */}
       <div className="w-full h-11">
         <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-          <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="public/battery.png" />
-          <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="public/wifi.svg" />
-          <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="public/mobile-signal.svg" />
+          <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="battery.png" />
+          <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="wifi.svg" />
+          <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="mobile-signal.svg" />
         </div>
-        <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(public/time.svg)] bg-[100%_100%]" />
+        <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(time.svg)] bg-[100%_100%]" />
       </div>
 
       {/* Header */}

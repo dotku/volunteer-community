@@ -20,7 +20,7 @@ export const VolunteerActivities = (): JSX.Element => {
       username: "starryskies23",
       timeAgo: "1d",
       action: "Started following you",
-      avatar: "public/profile-image.png",
+      avatar: "profile-image.png",
       hasNotification: true,
       hasButton: true,
       buttonText: "Message",
@@ -30,17 +30,17 @@ export const VolunteerActivities = (): JSX.Element => {
       username: "nebulanomad",
       timeAgo: "1d",
       action: "Liked your post",
-      avatar: "public/avatar-1.png",
+      avatar: "avatar-1.png",
       hasNotification: true,
       hasImage: true,
-      image: "public/image.png",
+      image: "image.png",
     },
     {
       id: 3,
       username: "emberecho",
       timeAgo: "2d",
       action: "Liked your comment",
-      avatar: "public/avatar-2.png",
+      avatar: "avatar-2.png",
       hasNotification: true,
       hasComment: true,
       comment: "Thanks for the Help!",
@@ -50,20 +50,20 @@ export const VolunteerActivities = (): JSX.Element => {
       username: "lunavoyager",
       timeAgo: "3d",
       action: "Saved your post",
-      avatar: "public/avatar-3.png",
+      avatar: "avatar-3.png",
       hasNotification: true,
       hasImage: true,
-      image: "public/image-2.png",
+      image: "image-2.png",
     },
     {
       id: 5,
       username: "shadowlynx",
       timeAgo: "4d",
       action: "Commented on your post",
-      avatar: "public/avatar-4.png",
+      avatar: "avatar-4.png",
       hasNotification: true,
       hasImage: true,
-      image: "public/image-2.png",
+      image: "image-2.png",
       hasReply: true,
       reply: "I hope they are can find their dog back",
     },
@@ -72,16 +72,16 @@ export const VolunteerActivities = (): JSX.Element => {
       username: "nebulanomad",
       timeAgo: "5d",
       action: "Shared a post you might like",
-      avatar: "public/avatar-5.png",
+      avatar: "avatar-5.png",
       hasImage: true,
-      image: "public/image-3.png",
+      image: "image-3.png",
     },
     {
       id: 7,
       username: "lunavoyager",
       timeAgo: "5d",
       action: "Liked your comment",
-      avatar: "public/avatar-6.png",
+      avatar: "avatar-6.png",
       hasComment: true,
       comment: "Amazing work!",
     },
@@ -96,20 +96,20 @@ export const VolunteerActivities = (): JSX.Element => {
             <img
               className="absolute w-6 h-[11px] top-0 left-[42px]"
               alt="Battery"
-              src="public/battery.png"
+              src="battery.png"
             />
             <img
               className="absolute w-[15px] h-[11px] top-0 left-[22px]"
               alt="Wifi"
-              src="public/wifi.svg"
+              src="wifi.svg"
             />
             <img
               className="absolute w-[17px] h-[11px] top-0 left-0"
               alt="Mobile signal"
-              src="public/mobile-signal.svg"
+              src="mobile-signal.svg"
             />
           </div>
-          <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(public/time.svg)] bg-[100%_100%]" />
+          <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(time.svg)] bg-[100%_100%]" />
         </div>
 
         {/* Header */}
@@ -247,7 +247,7 @@ export const VolunteerActivities = (): JSX.Element => {
 
               <Button variant="ghost" size="icon" className="p-0">
                 <Avatar className="w-6 h-6">
-                  <AvatarImage src="public/profile-image.png" alt="Profile" />
+                  <AvatarImage src="profile-image.png" alt="Profile" />
                   <AvatarFallback>U</AvatarFallback>
                 </Avatar>
               </Button>

@@ -19,7 +19,7 @@ export const Search = (): JSX.Element => {
       organization: "Green Earth Initiative",
       location: "Central Park",
       date: "This Saturday",
-      image: "public/image.png",
+      image: "image.png",
       description: "Join us for our weekly park cleanup initiative. Help keep our community clean and green!",
       spots: 8,
     },
@@ -29,7 +29,7 @@ export const Search = (): JSX.Element => {
       organization: "City Animal Rescue",
       location: "Downtown",
       date: "Weekly",
-      image: "public/image-2.png",
+      image: "image-2.png",
       description: "Support our animal shelter by helping with daily care routines and animal socialization.",
       spots: 5,
     },
@@ -39,7 +39,7 @@ export const Search = (): JSX.Element => {
       organization: "Community Food Network",
       location: "East Side",
       date: "Every Sunday",
-      image: "public/image-3.png",
+      image: "image-3.png",
       description: "Help distribute food to families in need. Make a direct impact in your community.",
       spots: 12,
     },
@@ -96,7 +96,7 @@ export const Search = (): JSX.Element => {
           <Link to="/profile">
             <Button variant="ghost" className="w-full justify-start gap-3">
               <Avatar className="w-8 h-8">
-                <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                <img src="profile-image.png" alt="Profile" className="rounded-full" />
               </Avatar>
               <span>Sarah Parker</span>
             </Button>
@@ -108,9 +108,9 @@ export const Search = (): JSX.Element => {
         {/* Status Bar - Mobile only */}
         <div className="h-11 relative md:hidden">
           <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-            <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="public/battery.png" />
-            <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="public/wifi.svg" />
-            <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="public/mobile-signal.svg" />
+            <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="battery.png" />
+            <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="wifi.svg" />
+            <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="mobile-signal.svg" />
           </div>
           <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(public/time.svg)] bg-[100%_100%]" />
         </div>
@@ -128,7 +128,7 @@ export const Search = (): JSX.Element => {
               <div className="flex items-center gap-2">
                 <Link to="/profile" className="lg:hidden">
                   <Avatar className="h-8 w-8">
-                    <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                    <img src="profile-image.png" alt="Profile" className="rounded-full" />
                   </Avatar>
                 </Link>
               </div>
@@ -223,7 +223,7 @@ export const Search = (): JSX.Element => {
             <Link to="/profile">
               <Button variant="ghost" size="icon" className="p-0">
                 <Avatar className="w-6 h-6">
-                  <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                  <img src="profile-image.png" alt="Profile" className="rounded-full" />
                 </Avatar>
               </Button>
             </Link>
