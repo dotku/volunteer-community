@@ -18,8 +18,8 @@ export const Home = (): JSX.Element => {
       content: "Looking for volunteers to help clean up Central Park this weekend! 🌿",
       likes: 124,
       comments: 45,
-      avatar: "public/profile-image.png",
-      image: "public/image.png",
+      avatar: "profile-image.png",
+      image: "image.png",
     },
     {
       id: 2,
@@ -28,8 +28,8 @@ export const Home = (): JSX.Element => {
       content: "Just finished my first day volunteering at the local animal shelter! 🐾",
       likes: 89,
       comments: 23,
-      avatar: "public/avatar-1.png",
-      image: "public/image-2.png",
+      avatar: "avatar-1.png",
+      image: "image-2.png",
     },
     {
       id: 3,
@@ -38,8 +38,8 @@ export const Home = (): JSX.Element => {
       content: "Incredible turnout at today's beach cleanup! Thank you to all 50+ volunteers who showed up! 🌊",
       likes: 156,
       comments: 34,
-      avatar: "public/avatar-2.png",
-      image: "public/image-3.png",
+      avatar: "avatar-2.png",
+      image: "image-3.png",
     }
   ];
 
@@ -94,7 +94,7 @@ export const Home = (): JSX.Element => {
           <Link to="/profile">
             <Button variant="ghost" className="w-full justify-start gap-3">
               <Avatar className="w-8 h-8">
-                <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                <img src="profile-image.png" alt="Profile" className="rounded-full" />
               </Avatar>
               <span>Sarah Parker</span>
             </Button>
@@ -106,11 +106,11 @@ export const Home = (): JSX.Element => {
         {/* Status Bar - Mobile only */}
         <div className="h-11 relative md:hidden">
           <div className="absolute w-[67px] h-[11px] top-[17px] right-4">
-            <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="public/battery.png" />
-            <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="public/wifi.svg" />
-            <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="public/mobile-signal.svg" />
+            <img className="absolute w-6 h-[11px] top-0 right-0" alt="Battery" src="battery.png" />
+            <img className="absolute w-[15px] h-[11px] top-0 right-8" alt="Wifi" src="wifi.svg" />
+            <img className="absolute w-[17px] h-[11px] top-0 right-14" alt="Signal" src="mobile-signal.svg" />
           </div>
-          <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(public/time.svg)] bg-[100%_100%]" />
+          <div className="absolute w-[54px] h-[21px] top-3 left-[21px] bg-[url(time.svg)] bg-[100%_100%]" />
         </div>
 
         {/* Header */}
@@ -126,7 +126,7 @@ export const Home = (): JSX.Element => {
               <div className="flex items-center gap-2">
                 <Link to="/profile" className="lg:hidden">
                   <Avatar className="h-8 w-8">
-                    <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                    <img src="profile-image.png" alt="Profile" className="rounded-full" />
                   </Avatar>
                 </Link>
               </div>
@@ -218,7 +218,7 @@ export const Home = (): JSX.Element => {
             <Link to="/profile">
               <Button variant="ghost" size="icon" className="p-0">
                 <Avatar className="w-6 h-6">
-                  <img src="public/profile-image.png" alt="Profile" className="rounded-full" />
+                  <img src="profile-image.png" alt="Profile" className="rounded-full" />
                 </Avatar>
               </Button>
             </Link>

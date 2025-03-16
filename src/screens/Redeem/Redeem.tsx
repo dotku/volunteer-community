@@ -12,21 +12,21 @@ export const Redeem = (): JSX.Element => {
       title: "Amazon Gift Card",
       points: 5000,
       value: "$50",
-      image: "public/image.png",
+      image: "image.png",
     },
     {
       id: 2,
       title: "Starbucks Gift Card",
       points: 2500,
       value: "$25",
-      image: "public/image-2.png",
+      image: "image-2.png",
     },
     {
       id: 3,
       title: "Target Gift Card",
       points: 10000,
       value: "$100",
-      image: "public/image-3.png",
+      image: "image-3.png",
     },
   ];
 
