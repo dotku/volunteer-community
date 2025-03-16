@@ -44,8 +44,8 @@ const App = () => {
       <div className="min-h-screen bg-gray-50">
         {/* Desktop Sidebar */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
-            <div className="flex h-16 shrink-0 items-center">
+          <div className="flex grow flex-col overflow-y-auto border-r border-gray-200 bg-white px-6">
+            <div className="flex h-20 shrink-0 items-center">
               <img
                 className="h-8 w-auto"
                 src="https://ui-avatars.com/api/?name=Volunteer+Community&background=3B82F6&color=fff"
@@ -53,15 +53,15 @@ const App = () => {
               />
             </div>
             <nav className="flex flex-1 flex-col">
-              <ul role="list" className="flex flex-1 flex-col gap-y-7">
+              <ul role="list" className="flex flex-1 flex-col">
                 <li>
-                  <ul role="list" className="-mx-2 space-y-1">
+                  <ul role="list" className="-mx-2 space-y-2">
                     {navigation.map((item) => (
                       <li key={item.name}>
                         <Link to={item.to}>
                           <Button
                             variant="ghost"
-                            className="w-full justify-start gap-3"
+                            className="w-full justify-start gap-3 py-2.5 px-3"
                           >
                             <item.icon className="h-5 w-5" />
                             {item.name}
@@ -73,17 +73,27 @@ const App = () => {
                 </li>
               </ul>
             </nav>
-            <div className="border-t">
+            <div className="border-t mt-auto">
               <Link to="/profile">
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <Avatar className="h-8 w-8 ring-2 ring-white relative z-10">
-                    <img
-                      src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
-                      alt="Profile"
-                      className="rounded-full"
-                    />
-                  </Avatar>
-                  <span className="relative z-0">Sarah Parker</span>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start gap-4 my-2"
+                >
+                  <div className="flex justify-between gap-4">
+                    <Avatar className="h-9 w-9 ring-2 ring-white">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
+                        alt="Profile"
+                        className="rounded-full"
+                      />
+                    </Avatar>
+                    <div className="flex flex-col items-start">
+                      <span className="font-medium">Sarah Parker</span>
+                      <span className="text-sm text-gray-500">
+                        View Profile
+                      </span>
+                    </div>
+                  </div>
                 </Button>
               </Link>
             </div>
@@ -130,35 +140,43 @@ const App = () => {
               </button>
             </div>
             <nav className="flex flex-col p-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start gap-3"
-                  >
-                    <item.icon className="h-5 w-5" />
-                    {item.name}
-                  </Button>
-                </Link>
-              ))}
-              <div className="border-t mt-4 pt-4">
+              <ul role="list" className="space-y-2">
+                {navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.to}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-start gap-3 py-2.5 px-3"
+                      >
+                        <item.icon className="h-5 w-5" />
+                        {item.name}
+                      </Button>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t mt-6">
                 <Link to="/profile" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
                     variant="ghost"
-                    className="w-full justify-start gap-3"
+                    className="w-full justify-start gap-4 py-4 px-2 mt-4"
                   >
-                    <Avatar className="h-8 w-8 ring-2 ring-white relative z-10">
+                    <Avatar className="h-9 w-9 ring-2 ring-white">
                       <img
                         src="https://ui-avatars.com/api/?name=Sarah+Parker&background=random"
                         alt="Profile"
                         className="rounded-full"
                       />
                     </Avatar>
-                    <span className="relative z-0">Sarah Parker</span>
+                    <div className="flex flex-col items-start">
+                      <span className="font-medium">Sarah Parker</span>
+                      <span className="text-sm text-gray-500">
+                        View Profile
+                      </span>
+                    </div>
                   </Button>
                 </Link>
               </div>
